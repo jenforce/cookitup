@@ -1,0 +1,24 @@
+{
+  "name": "cookitup",
+  "version": "1.0.0",
+  "description": "Social Recipe sharing website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenforce/cookitup.git"
+  },
+  "keywords": [
+    "cooking",
+    "social",
+    "recipe"
+  ],
+  "author": "Eli, Jen, Seth, Travis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenforce/cookitup/issues"
+  },
+  "homepage": "https://github.com/jenforce/cookitup#readme"
+}
