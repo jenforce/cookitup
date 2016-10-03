@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head ng-app="">
   <title>Cook It Up</title>
 
   <!-- Javscript -->
