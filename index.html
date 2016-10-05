@@ -3,14 +3,13 @@
 
 <head>
     <title>Cook It Up</title>
-    
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+     rel="stylesheet">
     <!-- Javscript -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-
     <script src="index.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
@@ -20,25 +19,27 @@
 </head>
 
 <body ng-app="CookItUp">
+    <md-nav-bar md-selected-nav-item="currentNavItem">
+        <md-nav-item md-nav-click="goto('page1')" name="page1"><input type="text" placeholder="Type recipe items"><i class="material-icons" id="search-icon">&#xE8B6;</i></md-nav-item>
+        
+    </md-nav-bar>
+
+
     <div ng-controller="AppCtrl" ng-cloak>
         <md-content class="md-padding" layout-xs="column" layout="row">
             <div flex-xs flex-gt-xs="50" layout="column">
-
                 <md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
                     <md-card-title>
                         <md-card-title-text>
                             <span class="md-headline">Scenic View of Chicago</span>
                         </md-card-title-text>
                     </md-card-title>
-
-
-
                     <md-card-content layout="row" layout-align="space-between">
                         <div class="md-media-xl card-media"></div>
-                          <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
                         <md-card-actions layout="column">
                             <md-button class="md-icon-button" aria-label="Favorites">
-                                <md-icon md-svg-icon="/img/ic_alarm_black_24px.svg"></md-icon>
+                                <md-icon md-svg-icon=""></md-icon>
                             </md-button>
                             <md-button class="md-icon-button" aria-label="Settings">
                                 <md-icon md-svg-icon="/img/ic_description_black_24px.svg"></md-icon>
@@ -49,8 +50,6 @@
                         </md-card-actions>
                     </md-card-content>
                 </md-card>
-
-
             </div>
 </body>
 
