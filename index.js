@@ -1,7 +1,7 @@
 angular.module('CookItUp', ['ngMaterial'])
 
 .controller('AppCtrl', function($scope) {
-  $scope.imagePath = 'img/washedout.png';
+  $scope.imagePath = 'assets/img/exampleimg.jpeg';
 })
 .config(function($mdThemingProvider) {
   $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();

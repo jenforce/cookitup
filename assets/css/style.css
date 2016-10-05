@@ -2,6 +2,12 @@
 .carddemoBasicUsage .card-media {
   background-color: #999999; }
 
-#searchbar{
-   
+.md-card-image{
+  height:375px;
+  width:450px;
+}
+
+.md-headline{
+  padding-bottom: 10px;
+  text-align: center;
 }
