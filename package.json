@@ -20,5 +20,19 @@
   "bugs": {
     "url": "https://github.com/jenforce/cookitup/issues"
   },
-  "homepage": "https://github.com/jenforce/cookitup#readme"
+  "homepage": "https://github.com/jenforce/cookitup#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "lodash": "^4.16.3",
+    "mysql": "^2.11.1",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^3.24.3"
+  }
 }
