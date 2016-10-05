@@ -6,8 +6,8 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-     rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <!-- Javscript -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="index.js"></script>
@@ -35,17 +35,19 @@
                         </md-card-title-text>
                     </md-card-title>
                     <md-card-content layout="row" layout-align="space-between">
-                        <div class="md-media-xl card-media"></div>
-                        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+
+                        <div class="md-media-sm card-media"></div>
+                          <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
                         <md-card-actions layout="column">
-                            <md-button class="md-icon-button" aria-label="Favorites">
-                                <md-icon md-svg-icon=""></md-icon>
+                            <md-button class="md-icon-button" aria-label="CookingPrep">
+                                <i class="material-icons">description</i>
+
                             </md-button>
-                            <md-button class="md-icon-button" aria-label="Settings">
-                                <md-icon md-svg-icon="/img/ic_description_black_24px.svg"></md-icon>
+                            <md-button class="md-icon-button" aria-label="CookingInstruct">
+                                <i class="material-icons">timer</i>
                             </md-button>
                             <md-button class="md-icon-button" aria-label="Share">
-                                <md-icon md-svg-icon="/img/ic_share_black_24px.svg"></md-icon>
+                                <i class="material-icons">share</i>
                             </md-button>
                         </md-card-actions>
                     </md-card-content>
