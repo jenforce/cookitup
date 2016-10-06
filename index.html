@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <title>Cook It Up</title>
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <!-- Javscript -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="index.js"></script>
@@ -19,12 +18,26 @@
 </head>
 
 <body ng-app="CookItUp">
-    <md-nav-bar md-selected-nav-item="currentNavItem">
-        <md-nav-item md-nav-click="goto('page1')" name="page1"><input type="text" placeholder="Type recipe items"><i class="material-icons" id="search-icon">&#xE8B6;</i></md-nav-item>
-        
-    </md-nav-bar>
-
-
+    <md-toolbar class="desktop">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Icon">
+                <md-tooltip>Icon</md-tooltip>
+                <md-icon class="md-default-theme" md-svg-icon="fb.svg"></md-icon>
+            </md-button>
+            <h2>
+          <span>CookItUp</span>
+        </h2>
+            <md-input-container md-no-float class="md-accent" flex="50" style="padding-bottom:0px;margin-left:25px">
+                <md-icon style="color:wheat" class="material-icons">&#xE8B6;</md-icon>
+                <input ng-model="searchInput" placeholder="Search here" style="color:wheat;padding-left:25px;margin-left:5px">
+            </md-input-container>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="User">
+                <md-tooltip>User</md-tooltip>
+                <img src="user.png" style="width:24px;height:24px;" />
+            </md-button>
+        </div>
+    </md-toolbar>
     <div ng-controller="AppCtrl" ng-cloak>
         <md-content class="md-padding" layout-xs="column" layout="row">
             <div flex-xs flex-gt-xs="50" layout="column">
@@ -35,13 +48,11 @@
                         </md-card-title-text>
                     </md-card-title>
                     <md-card-content layout="row" layout-align="space-between">
-
                         <div class="md-media-sm card-media"></div>
-                          <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
                         <md-card-actions layout="column">
                             <md-button class="md-icon-button" aria-label="CookingPrep">
                                 <i class="material-icons">description</i>
-
                             </md-button>
                             <md-button class="md-icon-button" aria-label="CookingInstruct">
                                 <i class="material-icons">timer</i>
