@@ -15,28 +15,6 @@
 }
 
 
-@media only screen 
-  and (max-width: 736px) { 
-  .desktop {
-    display:block;
-  }
-}
-
-@media only screen 
-  and (min-width: 736px) 
-  and (max-width: 1200px){ 
-  .desktop {
-    display:block;
-  }
-}
-
-@media only screen 
-  and (min-width: 1200px) {
-  .desktop {
-    display:block;
-  }
-}
-
 .img{
   width:250px;
   height:250px;
