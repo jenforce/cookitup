@@ -1,3 +1,6 @@
+.header md-toolbar md-icon.md-default-theme {
+  color: white; }
+
 
 .carddemoBasicUsage .card-media {
   background-color: #999999; }
@@ -9,4 +12,27 @@
 
 .md-headline{
   padding-bottom: 10px;
+}
+
+
+@media only screen 
+  and (max-width: 736px) { 
+  .desktop {
+    display:block;
+  }
+}
+
+@media only screen 
+  and (min-width: 736px) 
+  and (max-width: 1200px){ 
+  .desktop {
+    display:block;
+  }
+}
+
+@media only screen 
+  and (min-width: 1200px) {
+  .desktop {
+    display:block;
+  }
 }
