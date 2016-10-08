@@ -25,12 +25,11 @@ nav.navbar.navbar-default {
     height: 250px;
 }
 
-footer {
+#footer {
+    height: 80px;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
+    width: 100%;
     text-align: center;
     background-color: beige;
+    line-height: 4em;
 }
