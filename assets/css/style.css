@@ -1,21 +1,32 @@
-.header md-toolbar md-icon.md-default-theme {
-  color: white; }
 
+nav.navbar.navbar-default {
+    background-color: beige;
+    color: white;
+}
+
+.header md-toolbar md-icon.md-default-theme {
+    color: white;
+}
 
 .carddemoBasicUsage .card-media {
-  background-color: #999999; }
-
-.md-card-image{
-  height:375px;
-  width:450px;
+    background-color: #999999;
 }
 
-.md-headline{
-  padding-bottom: 10px;
+.md-card-image {
+    height: 375px;
+    width: 450px;
 }
 
+.md-headline {
+    padding-bottom: 10px;
+}
 
-.img{
-  width:250px;
-  height:250px;
+.img {
+    width: 250px;
+    height: 250px;
+}
+
+footer {
+    text-align: center;
+    background-color: beige;
 }
