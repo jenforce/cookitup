@@ -64,16 +64,30 @@ module.exports = function(app, passport) {
     });
 
     //Passbook-Facebook routes
-app.get('/auth/facebook',
-  passport.authenticate('facebook'));
- 
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/login' }),
-  function(req, res) {
-    // Successful authentication, redirect home. 
-    console.log('in auth facebookcallback');
-    res.redirect('/');
-  });
+    app.get('/auth/facebook',
+      passport.authenticate('facebook'));
+     
+    app.get('/auth/facebook/callback',
+      passport.authenticate('facebook', { failureRedirect: '/login' }),
+      function(req, res) {
+        // Successful authentication, redirect home. 
+        console.log('in auth facebookcallback');
+        res.redirect('/');
+    });
+
+    // =====================================
+    // TWITTER ROUTES ======================
+    // =====================================
+    // route for twitter authentication and login
+    app.get('/auth/twitter', passport.authenticate('twitter'));
+    console.log('twitter auth fires');
+    // handle the callback after twitter has authenticated the user
+    app.get('/auth/twitter/callback',
+        passport.authenticate('twitter', {
+            successRedirect : '/profile',
+            failureRedirect : '/'
+        }));
+    console.log('twitter auth 2 fires')
 };
 
 // route middleware to make sure a user is logged in
@@ -84,5 +98,6 @@ function isLoggedIn(req, res, next) {
         return next();
 
     // if they aren't redirect them to the home page
+    console.log('in auth twitter callback');
     res.redirect('/');
 }
