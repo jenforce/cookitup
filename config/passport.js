@@ -93,7 +93,8 @@ module.exports = function(passport) {
         // pull in our app id and secret from our auth.js file
         clientID        : configAuth.facebookAuth.clientID,
         clientSecret    : configAuth.facebookAuth.clientSecret,
-        callbackURL     : configAuth.facebookAuth.callbackURL
+        callbackURL     : configAuth.facebookAuth.callbackURL,
+        //profileFields: ['id', 'name','picture.type(large)', 'emails', 'username', 'displayName', 'about', 'gender']
 
     },
 
@@ -124,6 +125,7 @@ module.exports = function(passport) {
                     newUser.facebook.token = token; // we will save the token that facebook provides to the user                    
                     newUser.facebook.name  = profile.displayName; // look at the passport user profile to see how names are returned
                     //newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
+                    console.log(profileFields, "facebook photo");
                     console.log('saving user', newUser);
                     // save our user to the database
                     newUser.save(function(err) {

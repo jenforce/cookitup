@@ -30,10 +30,16 @@ nav.navbar.navbar-default {
 }
 
 #footer {
-    height: 80px;
+    height: 100px;
     position: absolute;
     width: 100%;
     text-align: center;
     background-color: beige;
     line-height: 4em;
 }
+
+.fa-2x {
+    font-size: 2em;
+    padding: 10px;
+}
+
