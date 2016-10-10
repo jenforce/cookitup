@@ -344,8 +344,10 @@ var Grid = (function() {
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$href = $( '<a href="#">Visit website</a>' );
-			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$href );
+			this.$shop = $( '<i class="material-icons">shopping_cart</i>' );
+			this.$share = $( '<i class="material-icons">share</i>' );
+			this.$ingredients = $( '<i class="material-icons">view_list</i>' );
+			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$shop, this.$share, this.$ingredients );
 			this.$loading = $( '<div class="og-loading"></div>' );
 			this.$fullimage = $( '<div class="og-fullimg"></div>' ).append( this.$loading );
 			this.$closePreview = $( '<span class="og-close"></span>' );
@@ -379,7 +381,9 @@ var Grid = (function() {
 			// update preview´s content
 			var $itemEl = this.$item.children( 'a' ),
 				eldata = {
-					href : $itemEl.attr( 'href' ),
+					share : $itemEl.attr( 'share' ),
+					ingredients : $itemEl.attr( 'ingredients' ),
+					shop : $itemEl.attr( 'shop' ),
 					largesrc : $itemEl.data( 'largesrc' ),
 					title : $itemEl.data( 'title' ),
 					description : $itemEl.data( 'description' )
@@ -387,7 +391,9 @@ var Grid = (function() {
 
 			this.$title.html( eldata.title );
 			this.$description.html( eldata.description );
-			this.$href.attr( 'href', eldata.href );
+			this.$shop.attr( 'shop', eldata.shop );
+			this.$share.attr( 'share', eldata.share );
+			this.$ingredients.attr( 'ingredients', eldata.share );
 
 			var self = this;
 			
