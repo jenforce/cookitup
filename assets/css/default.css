@@ -30,7 +30,9 @@ html { height: 100%; }
 
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
-    background: #f9f9f9;
+
+    background-image: url("../img/images/seamless_paper_texture.png");
+
     font-weight: 300;
     font-size: 15px;
     color: #333;
