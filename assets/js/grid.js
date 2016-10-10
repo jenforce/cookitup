@@ -12,14 +12,11 @@ $special,
 resizeTimeout;
 
 
-$("#example-two").on("click", function() {
-  var el = $(this);
-  if (el.text() == el.data("text-swap")) {
-    el.text(el.data("text-original"));
-  } else {
-    el.data("text-original", el.text());
-    el.text(el.data("text-swap"));
-  }
+$("button").on("click", function() {
+  var el = $(this),
+      tmp = el.text();
+  el.text(el.data("text-swap"));
+  el.data("text-swap", tmp);
 });
 
 $special = $event.special.debouncedresize = {
