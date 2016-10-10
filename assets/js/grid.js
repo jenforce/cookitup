@@ -11,6 +11,17 @@ var $event = $.event,
 $special,
 resizeTimeout;
 
+
+$("#example-two").on("click", function() {
+  var el = $(this);
+  if (el.text() == el.data("text-swap")) {
+    el.text(el.data("text-original"));
+  } else {
+    el.data("text-original", el.text());
+    el.text(el.data("text-swap"));
+  }
+});
+
 $special = $event.special.debouncedresize = {
 	setup: function() {
 		$( this ).on( "resize", $special.handler );
@@ -344,7 +355,7 @@ var Grid = (function() {
 			// create Preview structure:
 			this.$title = $( '<h3></h3>' );
 			this.$description = $( '<p></p>' );
-			this.$shop = $( '<i class="material-icons">shopping_cart</i>' );
+			this.$shop = $( '<button id="example-two" data-text-swap="Show"><i class="material-icons">shopping_cart</i></button>' );
 			this.$share = $( '<i class="material-icons">share</i>' );
 			this.$ingredients = $( '<i class="material-icons">view_list</i>' );
 			this.$details = $( '<div class="og-details"></div>' ).append( this.$title, this.$description, this.$shop, this.$share, this.$ingredients );
