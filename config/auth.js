@@ -8,9 +8,9 @@ module.exports = {
     },
 
     'twitterAuth' : {
-        'consumerKey'       : process.env.TWITTERKEY || 'YwCkdIDWuANTQukh4pYt39dPI',
-        'consumerSecret'    : process.env.TWITTERSECRET || 'MXfpjOeYOH2Nq9vxXkNB4mRUhqUoTEoIid8gUxoZDJuq81u6MV',
-        'callbackURL'       : process.env.TWITTERCALLBACKURL || 'http://127.0.0.1:3010/auth/twitter/callback'
+        'consumerKey'       : process.env.CONSUMER_KEY || 'YwCkdIDWuANTQukh4pYt39dPI',
+        'consumerSecret'    : process.env.CONSUMER_SECRET || 'MXfpjOeYOH2Nq9vxXkNB4mRUhqUoTEoIid8gUxoZDJuq81u6MV',
+        'callbackURL'       : process.env.callbackURL || 'http://127.0.0.1:3010/auth/twitter/callback'
     },
 
     'googleAuth' : {
