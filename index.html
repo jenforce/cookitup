@@ -6,15 +6,18 @@
 
 <head>
     <title>Cook It Up</title>
+    
     <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/elastic_grid.css"/>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/default.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/component.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<!--     <link rel="stylesheet" type="text/css" href="assets/css/default.css"> -->
+<!--     <link rel="stylesheet" type="text/css" href="assets/css/component.css"> -->
+<!--     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"> -->
     <!-- Javscript -->
-    <script src="assets/js/modernizr.custom.js"></script>
+
     <script src="index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 </head>
@@ -55,37 +58,121 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="main">
-            <ul id="og-grid" class="og-grid">
-                <li>
-                    <a href="#" data-largesrc="assets/img/images/1.png" data-title="Crown Roast of Pork with Chestnut-Rye Stuffing" data-description="A holiday dinner is your chance to pull out all the stops. For this majestic centerpiece, two racks of pork are attached end-to-end to form a crown. (Sure, you can special-order your cleaned and trimmed racks already tied, but why let the butcher have all the fun?) Once you fill the roast with savory chestnut-rye stuffing and pop it into the oven, you can rest easy until it’s time to whip up the gravy and wait for your guests to arrive. When they do, they’ll be dazzled by your delicious feast.">
-                        <img src="assets/img/images/thumbs/1.png" alt="img01" class="img" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-largesrc="assets/img/images/2.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
-                        <img src="assets/img/images/thumbs/2.png" alt="img01" class="img" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-largesrc="assets/img/images/3.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
-                        <img src="assets/img/images/thumbs/3.png" alt="img01" class="img" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-largesrc="assets/img/images/4.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
-                        <img src="assets/img/images/thumbs/4.png" alt="img01" class="img" />
-                    </a>
-                </li>
-                <li>
-                    <a href="#" data-largesrc="assets/img/images/5.png" data-title="Azuki bean" data-description="Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.">
-                        <img src="assets/img/images/thumbs/5.png" alt="img01" class="img" />
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+
+    <div id="elastic_grid_demo"></div>
+    <script type="text/javascript" src="assets/js/elastic_grid.min.js"></script>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+
+<div id="elastic_grid_demo"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="assets/js/modernizr.custom.js"></script>
+<script src="assets/js/classie.js"></script>
+
+<!-- compress version-->
+<script type="text/javascript" src="assets/js/elastic_grid.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $("#elastic_grid_demo").elastic_grid({
+            'showAllText' : 'All',
+            'filterEffect': 'popup', // moveup, scaleup, fallperspective, fly, flip, helix , popup
+            'hoverDirection': true,
+            'hoverDelay': 0,
+            'hoverInverse': false,
+            'expandingSpeed': 500,
+            'expandingHeight': 500,
+            'items' :
+            [
+                {
+                    'title'         : 'Crown Roast of Pork with Chestnut-Rye Stuffing',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. ',
+                    'thumbnail'     : ['assets/img/images/thumbs/1.jpg'],
+                    'large'         : ['assets/img/images/1.jpg'],
+                    'button_list'   :
+                    [
+                        { 'title':'<i class="material-icons">assignment_turned_in</i>', 'description' : 'Ingredients'},
+                        { 'title':'<i class="material-icons">timer</i>', 'description' : 'Cooking Directions'},
+                        { 'title':'<i class="material-icons">shopping_basket</i>','description' : 'Shopping List'},
+                        { 'title':'<i class="material-icons">share</i>', 'description' : 'Share With Friends'}
+                        
+                    ],
+                    'tags'          : ['food']
+                },
+
+                {
+                    'title'         : 'Second Recipe',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. ',
+                    'thumbnail'     : ['assets/img/images/thumbs/1.jpg'],
+                    'large'         : ['assets/img/images/1.jpg'],
+                    'button_list'   :
+                    [
+                        { 'title':'<i class="material-icons">assignment_turned_in</i>', 'description' : 'Ingredients'},
+                        { 'title':'<i class="material-icons">timer</i>', 'description' : 'Cooking Directions'},
+                        { 'title':'<i class="material-icons">shopping_basket</i>','description' : 'Shopping List'},
+                        { 'title':'<i class="material-icons">share</i>', 'description' : 'Share With Friends'}
+                        
+                    ],
+                    'tags'          : ['food']
+                },
+
+                {
+                    'title'         : 'Third Recipe',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. ',
+                    'thumbnail'     : ['assets/img/images/thumbs/1.jpg'],
+                    'large'         : ['assets/img/images/1.jpg'],
+                    'button_list'   :
+                    [
+                        { 'title':'<i class="material-icons">assignment_turned_in</i>', 'description' : 'Ingredients'},
+                        { 'title':'<i class="material-icons">timer</i>', 'description' : 'Cooking Directions'},
+                        { 'title':'<i class="material-icons">shopping_basket</i>','description' : 'Shopping List'},
+                        { 'title':'<i class="material-icons">share</i>', 'description' : 'Share With Friends'}
+                        
+                    ],
+                    'tags'          : ['food']
+                },
+
+                {
+                    'title'         : 'Fourth Recipe',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. ',
+                    'thumbnail'     : ['assets/img/images/thumbs/1.jpg'],
+                    'large'         : ['assets/img/images/1.jpg'],
+                    'button_list'   :
+                    [
+                        { 'title':'<i class="material-icons">assignment_turned_in</i>', 'description' : 'Ingredients'},
+                        { 'title':'<i class="material-icons">timer</i>', 'description' : 'Cooking Directions'},
+                        { 'title':'<i class="material-icons">shopping_basket</i>','description' : 'Shopping List'},
+                        { 'title':'<i class="material-icons">share</i>', 'description' : 'Share With Friends'}
+                        
+                    ],
+                    'tags'          : ['food']
+                },
+
+                {
+                    'title'         : 'Fifth Recipe',
+                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. ',
+                    'thumbnail'     : ['assets/img/images/thumbs/1.jpg'],
+                    'large'         : ['assets/img/images/1.jpg'],
+                    'button_list'   :
+                    [
+                        { 'title':'<i class="material-icons">assignment_turned_in</i>', 'description' : 'Ingredients'},
+                        { 'title':'<i class="material-icons">timer</i>', 'description' : 'Cooking Directions'},
+                        { 'title':'<i class="material-icons">shopping_basket</i>','description' : 'Shopping List'},
+                        { 'title':'<i class="material-icons">share</i>', 'description' : 'Share With Friends'}
+                        
+                    ],
+                    'tags'          : ['food']
+                },
+
+
+
+            ]
+        });
+    });
+</script>
+
+
     <br>
     <div id="footer">
         &copy;Copyright CookItUp 2016
@@ -93,14 +180,22 @@
         <a href="https://github.com/jenforce/cookitup"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/grid.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+<!--     <script type="text/javascript" src="assets/js/grid.js"></script> -->
+<!--     <script src="assets/js/modernizr.custom.js"></script>
+    <script src="assets/js/classie.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
     $(function() {
         Grid.init();
     });
     </script>   
+
+<!--     <script type="text/javascript">$(".button").toggle(function() {
+          $(this).text("DON'T PUSH ME");
+        }, function() {
+          $(this).text("PUSH ME");
+        });</script> -->
 </body>
 
 </html>
