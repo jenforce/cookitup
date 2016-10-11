@@ -3,7 +3,7 @@ module.exports = {
 
     'facebookAuth' : {
         'clientID'      : process.env.FACEBOOK_APP_ID || '306010069772025', // your App ID
-        'clientSecret'  : process.env.FACEBOOK_APP_SECRET || 'a19fd4445756be1951d83dcf187f2eb5', // your App Secret
+        'clientSecret'  : process.env.FACEBOOK_APP_SECRET || 'd51039eb79fde7d95a30b346f0997ffc', // your App Secret
         'callbackURL'   : process.env.FACEBOOK_CALLBACK_URL || 'http://localhost:3010/auth/facebook/callback'
     },
 
