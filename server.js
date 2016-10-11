@@ -16,7 +16,7 @@ var configDB = require('./config/database.js');
 
 console.log('connecting to', configDB.url);
 // configuration ===============================================================
-mongoose.connect(configDB.url); // connect to our database
+mongoose.connect('mongodb://coffeeteer:thoughtknot2828@ds029051.mlab.com:29051/cookitupteam' || configDB.url); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
@@ -33,16 +33,17 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
-//to solve heroku load up
-function sessionCleanup() {
-    sessionStore.all(function(err, sessions) {
-        for (var i = 0; i < sessions.length; i++) {
-            sessionStore.get(sessions[i], function() {} );
-        }
-    });
-}
 
-$interval(sessionCleanup, 10000);
+//to solve heroku load up
+// function sessionCleanup() {
+//     sessionStore.all(function(err, sessions) {
+//         for (var i = 0; i < sessions.length; i++) {
+//             sessionStore.get(sessions[i], function() {} );
+//         }
+//     });
+// }
+
+// $interval(sessionCleanup, 10000);
 //-- heroku end
 
 // routes ======================================================================
