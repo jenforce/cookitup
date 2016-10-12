@@ -33,7 +33,36 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
+app.use(express.static(process.cwd() + '/assets'));
 
+app.get('/', function(req, res) {
+  res.render('home', {
+    user: req.user
+  });
+});
+
+app.get('/login', function(req, res) {
+  res.render('index', {
+    user: req.user
+  });
+});
+
+app.get('/logout', function(req, res) {
+  if (req.user) {
+    req.logout();
+  }
+  res.redirect('/');
+})
+
+
+app.get('/profile', function(req, res) {
+  if (!req.user) {
+    return res.redirect('/login');
+  }
+  res.render('profile', {
+    user: req.user
+  })
+})
 //to solve heroku load up
 // function sessionCleanup() {
 //     sessionStore.all(function(err, sessions) {
@@ -47,7 +76,7 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 //-- heroku end
 
 // routes ======================================================================
-require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
+require('./routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
 app.listen(port);
