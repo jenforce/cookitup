@@ -33,6 +33,7 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
+
 app.use(express.static(process.cwd() + '/assets'));
 
 app.get('/', function(req, res) {
@@ -63,6 +64,7 @@ app.get('/profile', function(req, res) {
     user: req.user
   })
 })
+
 //to solve heroku load up
 // function sessionCleanup() {
 //     sessionStore.all(function(err, sessions) {
