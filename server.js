@@ -11,12 +11,13 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
+var MongoStore = require('connect-mongo')(session);
 
 var configDB = require('./config/database.js');
 
-console.log('connecting to', configDB.url);
+console.log('connecting to',process.env.MLAB || configDB.url);
 // configuration ===============================================================
-mongoose.connect('mongodb://coffeeteer:thoughtknot2828@ds029051.mlab.com:29051/cookitupteam' || configDB.url); // connect to our database
+mongoose.connect(process.env.MLAB || configDB.url); // connect to our database
 
 require('./config/passport')(passport); // pass passport for configuration
 
@@ -28,7 +29,7 @@ app.use(bodyParser()); // get information from html forms
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 // required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch', store: new MongoStore({ mongooseConnection: mongoose.connection }) })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
