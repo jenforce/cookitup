@@ -1,0 +1,96 @@
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div ng-controller="recipeForm">
+
+  <form class="form-horizontal">
+
+    <div class="form-group">    
+        <label for="title" class="col-sm-2">Recipe Title</label>
+      <div class="col-sm-4">
+        <input type="text" ng-model="recipe.title" class="form-control" id="title" placeholder="The title of your recipe">
+      </div>
+    </div>
+
+     <div class="form-group">    
+        <label for="description" class="col-sm-2">Recipe Description</label>
+      <div class="col-sm-4">
+        <textarea class="form-control" ng-model="recipe.description" rows="5" id="description" placeholder="Tell us about your recipe!"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+          <label for="ingredients" class="col-sm-2">Ingredients</label>
+        <div class="col-sm-4">
+            <textarea class="form-control" ng-model="recipe.ingredients" rows="5" id="ingredients" placeholder="What are the ingredients?"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+          <label for="prepInstructions" class="col-sm-2">Prep Instructions</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" ng-model="recipe.prepInstructions" rows="5" id="prepInstructions" placeholder="Lets prep those ingredients!"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+          <label for="cookingInstructions" class="col-sm-2">Cooking Instructions</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" ng-model="recipe.cookingDirections" rows="5" id="cookingDirections" placeholder="Lets cook it up!"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+          <label for="comments" class="col-sm-2">General Comments</label>
+        <div class="col-sm-4">
+          <textarea class="form-control" ng-model="recipe.comments" rows="5" id="comments" placeholder="Leave a comment about your recipe"></textarea>
+        </div>
+    </div>
+
+  </form>
+</div>
+
+
+
+
+
+
+<!-- Example from W3Schools
+<div ng-app="myApp" ng-controller="formCtrl">
+  <form novalidate>
+    First Name:<br>
+    <input type="text" ng-model="user.firstName"><br>
+    Last Name:<br>
+    <input type="text" ng-model="user.lastName">
+    <br><br>
+    <button ng-click="reset()">RESET</button>
+  </form>
+  <p>form = {{user}}</p>
+  <p>master = {{master}}</p>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('formCtrl', function($scope) {
+    $scope.master = {firstName: "John", lastName: "Doe"};
+    $scope.reset = function() {
+        $scope.user = angular.copy($scope.master);
+    };
+    $scope.reset();
+});
+</script> -->
+
+<!-- The ng-app directive defines the AngularJS application.
+
+The ng-controller directive defines the application controller.
+
+The ng-model directive binds two input elements to the user object in the model.
+
+The formCtrl controller sets initial values to the master object, and defines the reset() method.
+
+The reset() method sets the user object equal to the master object.
+
+The ng-click directive invokes the reset() method, only if the button is clicked.
+
+The novalidate attribute is not needed for this application, but normally you will use it in AngularJS forms, to override standard HTML5 validation. -->
