@@ -53,31 +53,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <p><span><i class="material-icons">library_add</i></span> Add Recipe</p>
-                                <div class="container">
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="recipeModal" role="dialog">
-                                        <div class="modal-dialog">
-
-                                            <!-- Modal content-->
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <h4 class="modal-title">Add Your Recipe</h4>
-                                                </div>
-
-                                                <div class="modal-body">
-                                                    <div ng-include="'./assets/view1/recipe-card.html'"></div>
-                                                </div>
-
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <a data-toggle="modal" data-target="#myModal" href="#">
+                            <p><span><i class="material-icons" >library_add</i></span> Add Recipe</p>
                         </a>
                     </li>
                     <% } %>
@@ -97,6 +74,49 @@
             </div>
         </div>
     </nav>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Your Recipe</h4>
+      </div>
+      <div class="modal-body">
+        <div ng-include="'/view2/recipe-entry.html'"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+                                    <!-- <div class="container">
+
+                                    <div class="modal fade" id="recipeModal" role="dialog">
+                                        <div class="modal-dialog">
+
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h4 class="modal-title">Add Your Recipe</h4>
+                                                </div>
+
+                                                <div class="modal-body">
+                                                    <div ng-include="'./assets/view2/recipe-card.html'"></div>
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
 
     <div id="elastic_grid_demo"></div>
     <div ng-view></div>

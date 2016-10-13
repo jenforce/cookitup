@@ -1,6 +1,6 @@
 angular
-.module('recipeEntry', []);
-.controller('recipeForm', function($scope) {
+.module('recipeForm', []);
+.controller('recipeEntry', function($scope) {
     $scope.recipe = {
         title: "",
         description: "",
