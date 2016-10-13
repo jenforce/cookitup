@@ -2,9 +2,9 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<div ng-controller="recipeForm">
+<div ng-controller="recipeForm" ng>
 
-  <form class="form-horizontal">
+  <form class="form-horizontal" ng-submit>
 
     <div class="form-group">    
         <label for="title" class="col-sm-2">Recipe Title</label>
@@ -49,6 +49,7 @@
     </div>
 
   </form>
+  <button class="btn btn-primary" type="submit">Submit</button>
 </div>
 
 
