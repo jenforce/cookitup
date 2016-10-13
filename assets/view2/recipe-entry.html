@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<div ng-controller="recipeForm" ng>
+<div ng-app="recipeEntry" ng-controller="recipeForm" ng>
 
   <form class="form-horizontal" ng-submit>
 
@@ -47,6 +47,9 @@
           <textarea class="form-control" ng-model="recipe.comments" rows="5" id="comments" placeholder="Leave a comment about your recipe"></textarea>
         </div>
     </div>
+
+    <label class="control-label">Recipe Image</label>
+    <input id="input-1" type="file" class="file" ng-model="recipe.image">
 
   </form>
   <button class="btn btn-primary" type="submit">Submit</button>
