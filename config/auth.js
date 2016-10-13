@@ -10,13 +10,7 @@ module.exports = {
     'twitterAuth' : {
         'consumerKey'       : process.env.TWITTER_CONSUMER_KEY || 'YwCkdIDWuANTQukh4pYt39dPI',
         'consumerSecret'    : process.env.TWITTER_CONSUMER_SECRET || 'MXfpjOeYOH2Nq9vxXkNB4mRUhqUoTEoIid8gUxoZDJuq81u6MV',
-        'callbackURL'       : process.env.callbackURL || 'http://127.0.0.1:3010/auth/twitter/callback'
-    },
-
-    'googleAuth' : {
-        'clientID'      : 'your-secret-clientID-here',
-        'clientSecret'  : 'your-client-secret-here',
-        'callbackURL'   : 'http://localhost:8080/auth/google/callback'
+        'callbackURL'       : process.env.TWITTER_CALLBACK_URL || 'http://127.0.0.1:3010/auth/twitter/callback'
     }
 
 };
