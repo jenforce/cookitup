@@ -88,6 +88,10 @@ module.exports = function(passport) {
     // =========================================================================
     // FACEBOOK ================================================================
     // =========================================================================
+
+    console.log('using facebook clientID', configAuth.facebookAuth.clientID);
+    console.log('using facebook clientSecret', configAuth.facebookAuth.clientSecret);
+    console.log('using facebook callbackURL', configAuth.facebookAuth.callbackURL);    
     passport.use(new FacebookStrategy({
 
         // pull in our app id and secret from our auth.js file
@@ -125,7 +129,7 @@ module.exports = function(passport) {
                     newUser.facebook.token = token; // we will save the token that facebook provides to the user                    
                     newUser.facebook.name  = profile.displayName; // look at the passport user profile to see how names are returned
                     //newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
-                    console.log(profileFields, "facebook photo");
+                    //console.log(profileFields, "facebook photo");
                     console.log('saving user', newUser);
                     // save our user to the database
                     newUser.save(function(err) {
@@ -145,6 +149,10 @@ module.exports = function(passport) {
     // =========================================================================
     // TWITTER =================================================================
     // =========================================================================
+
+    console.log('using twitter consumerKey', configAuth.twitterAuth.consumerKey);
+    console.log('using twitter consumerSecret', configAuth.twitterAuth.consumerSecret);
+    console.log('using twitter callbackURL', configAuth.twitterAuth.callbackURL);
     passport.use(new TwitterStrategy({
 
         consumerKey     : configAuth.twitterAuth.consumerKey,
