@@ -1,13 +1,19 @@
 'use strict';
 
-console.log("****app.js")
+console.log("****app.js******")
 angular.module('CookItUp', [
-  // 'CookItUp.service',
-  // 'ngRoute',
-  // 'CookItUp.search',
+   'angular-elastic-grid',
+   'CookItUp.service',
+   'ngRoute',
+   'CookItUp.search'
   // 'CookItUp.view1',
   // 'CookItup.view2',
-  ]).
-config([function (){
+  ]).controller('MainController', function($scope, $location) {
+   $scope.search = function(searchQuery) {
+      console.log('in search button click', searchQuery);
+        $location.path('search');
+   }
+   console.log('in main controller');
+}).config([function (){
   
 }])
