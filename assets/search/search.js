@@ -19,9 +19,9 @@ angular.module('CookItUp.search', ['ngRoute'])
             console.log('recipe', recipe);
             return {
               title: recipe.title,
-              description: 'test',
-              'thumbnail'     : ['/img/images/thumbs/1.jpg'],    
-              'large'         : ['/img/images/1.jpg'],
+              description: recipe.f2f_url,
+              'thumbnail'     : [recipe.image_url],    
+              'large'         : [recipe.image_url],
               button_list: [],
               tags: ['food']      
             }
