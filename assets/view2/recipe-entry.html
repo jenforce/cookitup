@@ -1,49 +1,50 @@
 
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
 
 <div ng-app="recipeEntry" ng-controller="recipeForm" ng>
 
   <form class="form-horizontal" ng-submit>
 
     <div class="form-group">    
-        <label for="title" class="col-sm-2">Recipe Title</label>
-      <div class="col-sm-4">
+        <label for="title" class="col-sm-3">Recipe Title</label>
+      <div class="col-sm-9">
         <input type="text" ng-model="recipe.title" class="form-control" id="title" placeholder="The title of your recipe">
       </div>
     </div>
 
      <div class="form-group">    
-        <label for="description" class="col-sm-2">Recipe Description</label>
-      <div class="col-sm-4">
+        <label for="description" class="col-sm-3">Recipe Description</label>
+      <div class="col-sm-8">
         <textarea class="form-control" ng-model="recipe.description" rows="5" id="description" placeholder="Tell us about your recipe!"></textarea>
       </div>
     </div>
 
     <div class="form-group">
-          <label for="ingredients" class="col-sm-2">Ingredients</label>
-        <div class="col-sm-4">
+          <label for="ingredients" class="col-sm-3">Ingredients</label>
+        <div class="col-sm-8">
             <textarea class="form-control" ng-model="recipe.ingredients" rows="5" id="ingredients" placeholder="What are the ingredients?"></textarea>
         </div>
     </div>
 
     <div class="form-group">
-          <label for="prepInstructions" class="col-sm-2">Prep Instructions</label>
-        <div class="col-sm-4">
+          <label for="prepInstructions" class="col-sm-3">Prep Instructions</label>
+        <div class="col-sm-8">
           <textarea class="form-control" ng-model="recipe.prepInstructions" rows="5" id="prepInstructions" placeholder="Lets prep those ingredients!"></textarea>
         </div>
     </div>
 
     <div class="form-group">
-          <label for="cookingInstructions" class="col-sm-2">Cooking Instructions</label>
-        <div class="col-sm-4">
+          <label for="cookingInstructions" class="col-sm-3">Cooking Instructions</label>
+        <div class="col-sm-8">
           <textarea class="form-control" ng-model="recipe.cookingDirections" rows="5" id="cookingDirections" placeholder="Lets cook it up!"></textarea>
         </div>
     </div>
 
     <div class="form-group">
-          <label for="comments" class="col-sm-2">General Comments</label>
-        <div class="col-sm-4">
+          <label for="comments" class="col-sm-3">General Comments</label>
+        <div class="col-sm-8">
           <textarea class="form-control" ng-model="recipe.comments" rows="5" id="comments" placeholder="Leave a comment about your recipe"></textarea>
         </div>
     </div>
