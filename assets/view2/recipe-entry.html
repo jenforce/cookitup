@@ -2,10 +2,11 @@
 <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
+<script type="text/javascript" src="recipe-entry.js"></script>
 
 <div ng-app="recipeEntry" ng-controller="recipeForm" ng>
 
-  <form class="form-horizontal" ng-submit>
+  <form class="form-horizontal">
 
     <div class="form-group">    
         <label for="title" class="col-sm-3">Recipe Title</label>
@@ -53,10 +54,10 @@
     <input id="input-1" type="file" class="file" ng-model="recipe.image">
 
   </form>
-  <button class="btn btn-primary" type="submit">Submit</button>
+
 </div>
 
-
+  <button class="btn btn-primary" ng-click="recipeSubmit()" type="input">Submit</button>
 
 
 

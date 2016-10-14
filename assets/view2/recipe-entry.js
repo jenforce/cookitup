@@ -1,6 +1,6 @@
 angular
 .module('recipeForm', []);
-.controller('recipeEntry', function($scope) {
+controller('recipeEntry',['$scope', function($scope) {
     $scope.recipe = {
         title: "",
         description: "",
@@ -8,6 +8,9 @@ angular
         prepInstructions: "",
         cookingDirections: "",
         comments: ""
-        image:"",
+        image:""
       };
-  });
+    $scope.recipeSubmit() = function(){
+      console.log("I've been clicked")
+    };
+  }]);
