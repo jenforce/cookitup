@@ -88,6 +88,10 @@ module.exports = function(passport) {
     // =========================================================================
     // FACEBOOK ================================================================
     // =========================================================================
+
+    console.log('using facebook clientID', configAuth.facebookAuth.clientID);
+    console.log('using facebook clientSecret', configAuth.facebookAuth.clientSecret);
+    console.log('using facebook callbackURL', configAuth.facebookAuth.callbackURL);    
     passport.use(new FacebookStrategy({
 
         // pull in our app id and secret from our auth.js file
@@ -145,6 +149,10 @@ module.exports = function(passport) {
     // =========================================================================
     // TWITTER =================================================================
     // =========================================================================
+
+    console.log('using twitter consumerKey', configAuth.twitterAuth.consumerKey);
+    console.log('using twitter consumerSecret', configAuth.twitterAuth.consumerSecret);
+    console.log('using twitter callbackURL', configAuth.twitterAuth.callbackURL);
     passport.use(new TwitterStrategy({
 
         consumerKey     : configAuth.twitterAuth.consumerKey,
