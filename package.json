@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/jenforce/cookitup#readme",
   "dependencies": {
+    "angular-elastic-grid": "^1.0.7",
     "bcrypt-nodejs": "latest",
     "body-parser": "~1.0.0",
     "connect-flash": "~0.1.1",

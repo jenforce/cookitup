@@ -1,0 +1,11 @@
+nav#porfolio-nav li:last-child a {
+  border-right: 1;
+}
+
+.og-expander {
+  width: 99%;
+}
+
+.og-pointer {
+  margin: -15px 0 0 -15px;
+}
