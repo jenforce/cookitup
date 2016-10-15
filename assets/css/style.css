@@ -60,6 +60,7 @@ nav.navbar.navbar-default {
 
 .modal-body {
     background-color: #ededed;
+    color:black;!important
 }
 
 #image-input {
