@@ -36,7 +36,6 @@ nav.navbar.navbar-default {
     height: 250px;
 }
 
-
 #footer {
     position: absolute;
     width: 100%;
@@ -54,22 +53,65 @@ nav.navbar.navbar-default {
     padding: 10px;
 }
 
-
-.modal-header,.modal-footer{
-    background-color:   #FCE883;
+.modal-header,
+.modal-footer {
+    background-color: #FCE883;
 }
 
-.modal-body{
+.modal-body {
     background-color: #ededed;
 }
 
-#image-input{
-    padding:5px 0 5px;
+#image-input {
+    padding: 5px 0 5px;
 }
-
 
 .visibility {
-"visibility: hidden;"
+    "visibility: hidden;"
+}
+
+.jumbotron {
+    background: url('/img/images/Cooking_Background.jpg') no-repeat center center fixed;
+    height: 75%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+ h1.area {
+  text-align:center;
+  font-size:6.5em;
+  color:#fff;
+  letter-spacing: -7px;
+  font-weight:700;
+  text-transform:uppercase;
+  animation:blur .75s ease-out infinite;
+  text-shadow:0px 0px 5px #fff,
+      0px 0px 7px #fff;
+}
+
+@keyframes blur{
+  from{
+      text-shadow:0px 0px 10px #fff,
+      0px 0px 10px #fff, 
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;}
+}
