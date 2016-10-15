@@ -4,7 +4,7 @@
 
 <script type="text/javascript" src="recipe-entry.js"></script>
 
-<div ng-app="recipeEntry" ng-controller="recipeForm" ng>
+<div ng-app="recipeEntry" ng-controller="recipeForm">
 
   <form class="form-horizontal">
 
@@ -51,13 +51,13 @@
     </div>
 
     <label class="control-label">Recipe Image</label>
-    <input id="input-1" type="file" class="file" ng-model="recipe.image">
-
+    <input id="image-input" type="file" class="file" ng-model="recipe.image">
+  <button class="btn btn-primary" ng-click="recipeSubmit()" type="input">Submit</button>
   </form>
 
 </div>
 
-  <button class="btn btn-primary" ng-click="recipeSubmit()" type="input">Submit</button>
+
 
 
 

@@ -66,6 +66,36 @@ app.get('/profile', function(req, res) {
   })
 })
 
+// Submit to the DB
+// app.post('/home', function(req,res){
+//     var body = req.body;
+//     db.Recipes.create({
+//         title: body.title,
+//         description: body.description,
+//         ingredients: body.ingredients,
+//         intructions: body.instructions,
+//         directions: body.directions,
+//         comments: body.comments,
+//         image:body.image  
+//       }).then(function(data){
+//         console.log('data',data);
+//     res.render('index');
+
+//   })
+// });
+
+// collection.insert(req.body, function (err, data) {
+//   if (err) {
+//     res.send("There was a problem adding the information to the database.");
+//   }
+//   else {
+//     res.location("home");
+//     res.redirect("/");
+//   }
+// });
+
+
+
 //to solve heroku load up
 // function sessionCleanup() {
 //     sessionStore.all(function(err, sessions) {
