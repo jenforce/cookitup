@@ -1,3 +1,4 @@
+angular
 module('recipeForm', []);
 controller('recipeEntry',['$scope', function($scope) {
     $scope.recipe = {
