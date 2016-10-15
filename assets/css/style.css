@@ -1,3 +1,10 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 body {
     background-image: url("/img/images/seamless_paper_texture.png");
 }
@@ -28,6 +35,7 @@ nav.navbar.navbar-default {
     width: 250px;
     height: 250px;
 }
+
 
 #footer {
     position: absolute;
@@ -63,4 +71,5 @@ nav.navbar.navbar-default {
 .visibility {
 "visibility: hidden;"
 }
+
 

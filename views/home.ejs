@@ -44,7 +44,12 @@
 </head>
 
 <body ng-app="CookItUp">
+
+  <div class="header">  
+    <nav class="navbar navbar-default" role="navigation" class="clearfix">
+
     <nav class="navbar navbar-default navbar-fixed-top"" role="navigation" class="clearfix">
+
         <div class="container-fluid">
             <!-- add header -->
             <div class="navbar-header">
@@ -54,7 +59,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">CookItUp</a>
+                <a class="navbar-brand" href="#" style="display: inline-block; position: relative;"><img src="/img/images/cooking-pot.png" style="display: inline-block;">CookItUp</a>
             </div>
             <!-- add menu -->
             <div class="collapse navbar-collapse" id="navbar1" ng-controller="MainController">
@@ -94,6 +99,12 @@
             </div>
         </div>
     </nav>
+   
+
+<!-- 
+        <div class="jumbotron">
+            <h1>#1 Recipe Site</h1>
+        </div> -->
 
 
     <div ng-view>my view</div>
@@ -118,6 +129,8 @@
 </div>
 
 
+
+
 <div id="elastic_grid_demo"></div>
   
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
@@ -127,12 +140,8 @@
 
 
 
-    <br>
     <div id="footer">
-        &copy;Copyright CookItUp 2016
-        <br>
-        <a href="https://github.com/jenforce/cookitup"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+        
     </div>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--     <script>
@@ -146,6 +155,7 @@
         }, function() {
           $(this).text("PUSH ME");
         });</script> -->
+        
 </body>
 
 </html>
