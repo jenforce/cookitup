@@ -1,5 +1,4 @@
-angular
-.module('recipeForm', []);
+module('recipeForm', []);
 controller('recipeEntry',['$scope', function($scope) {
     $scope.recipe = {
         title: "",
@@ -7,7 +6,7 @@ controller('recipeEntry',['$scope', function($scope) {
         ingredients:"",
         prepInstructions: "",
         cookingDirections: "",
-        comments: ""
+        comments: "",
         image:""
       };
     $scope.recipeSubmit() = function(){
