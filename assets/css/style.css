@@ -46,6 +46,21 @@ nav.navbar.navbar-default {
     padding: 10px;
 }
 
+
+.modal-header,.modal-footer{
+    background-color:   #FCE883;
+}
+
+.modal-body{
+    background-color: #ededed;
+}
+
+#image-input{
+    padding:5px 0 5px;
+}
+
+
 .visibility {
 "visibility: hidden;"
 }
+
