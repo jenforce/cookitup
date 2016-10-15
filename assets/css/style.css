@@ -66,6 +66,7 @@ nav.navbar.navbar-default {
     padding: 5px 0 5px;
 }
 
+
 .visibility {
     "visibility: hidden;"
 }
@@ -78,6 +79,12 @@ nav.navbar.navbar-default {
     -o-background-size: cover;
     background-size: cover;
 }
+
+
+/*.visibility {
+"visibility: hidden;"
+}*/
+
 
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
