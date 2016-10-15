@@ -35,12 +35,17 @@ nav.navbar.navbar-default {
     text-align: center;
     background-color: beige;
     line-height: 4em;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 
 .fa-2x {
     font-size: 2em;
     padding: 10px;
 }
+
 
 .modal-header,.modal-footer{
     background-color:   #FCE883;
@@ -52,5 +57,10 @@ nav.navbar.navbar-default {
 
 #image-input{
     padding:5px 0 5px;
+}
+
+
+.visibility {
+"visibility: hidden;"
 }
 

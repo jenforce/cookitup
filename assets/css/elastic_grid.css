@@ -49,8 +49,10 @@
 	outline: none;
 	display: block;
 	position: relative;
+  height: 200px; 
+  width: 350px; 
+  object-fit: cover;
 }
-
 
 /*.og-grid .sep {
 	margin: 20px;

@@ -10,6 +10,7 @@
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/demo.css" />
     <link rel="stylesheet" type="text/css" href="/css/elastic_grid.css"/>
+    <link rel="stylesheet" type="text/css" href="/js/angular-elastic-grid/style.css"/>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -17,15 +18,33 @@
 <!--     <link rel="stylesheet" type="text/css" href="/css/component.css"> -->
    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">     <!-- Javscript -->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script src="/js/modernizr.custom.js"></script>
+    <script src="/js/classie.js"></script>
+     
+     
+
+    <!-- compress version-->
+    <script type="text/javascript" src="/js/elastic_grid.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.elastislide.js"></script>
+    <script type="text/javascript" src="/js/jquery.hoverdir.js"></script>
+
+
    
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="/js/angular-elastic-grid/angular-elastic-grid.js"></script>
+
+    <script src="/components/service/apiSearch.js"></script>    
+    <script src="/search/search.js"></script>
     <script src="/app.js"></script>
     <script src="/view2/recipe-entry.js"></script>
 
 </head>
 
 <body ng-app="CookItUp">
-    <nav class="navbar navbar-default" role="navigation" class="clearfix">
+    <nav class="navbar navbar-default navbar-fixed-top"" role="navigation" class="clearfix">
         <div class="container-fluid">
             <!-- add header -->
             <div class="navbar-header">
@@ -38,7 +57,7 @@
                 <a class="navbar-brand" href="#">CookItUp</a>
             </div>
             <!-- add menu -->
-            <div class="collapse navbar-collapse" id="navbar1">
+            <div class="collapse navbar-collapse" id="navbar1" ng-controller="MainController">
                 <ul class="nav navbar-nav navbar-right">
                     <% if (!user) { %>
                     <li>
@@ -64,9 +83,9 @@
                 <!-- search form -->
                 <form class="navbar-form navbar-right" role="search">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for Recipe">
+                        <input ng-model="searchQuery" type="text" class="form-control" placeholder="Search for Recipe">
                         <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default">
+                        <button ng-click="search(searchQuery)" type="submit" class="btn btn-default">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                         </span>
@@ -76,6 +95,8 @@
         </div>
     </nav>
 
+
+    <div ng-view>my view</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -97,119 +118,13 @@
 </div>
 
 
-    <div id="elastic_grid_demo"></div>
-    <div ng-view></div>
-
+<div id="elastic_grid_demo"></div>
+  
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
 <!-- random change -->
-<div id="elastic_grid_demo"></div>
+<!-- <div id="elastic_grid_demo"></div>
+ -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-
-<script src="/js/modernizr.custom.js"></script>
-<script src="/js/classie.js"></script>
-
-<!-- compress version-->
-<script type="text/javascript" src="/js/elastic_grid.min.js"></script>
-
-<script type="text/javascript">
-    $(function(){
-        $("#elastic_grid_demo").elastic_grid({
-            'showAllText' : 'All',
-            'filterEffect': 'popup', // moveup, scaleup, fallperspective, fly, flip, helix , popup
-            'hoverDirection': true,
-            'hoverDelay': 0,
-            'hoverInverse': false,
-            'expandingSpeed': 500,
-            'expandingHeight': 500,
-            'items' :
-            [
-                {
-                    'title'         : 'Crown Roast of Pork with Chestnut-Rye Stuffing',
-                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. ',
-                    'thumbnail'     : ['/img/images/thumbs/1.jpg'],
-                    'large'         : ['/img/images/1.jpg'],
-                    'button_list'   :
-                    [
-                        { 'title':'<i class="material-icons">assignment_turned_in</i>', 'description' : 'Ingredients'},
-                        { 'title':'<i class="material-icons">timer</i>', 'description' : 'Cooking Directions'},
-                        { 'title':'<i class="material-icons">shopping_basket</i>','description' : 'Shopping List'},
-                        { 'title':'<i class="material-icons">share</i>', 'description' : 'Share With Friends'}
-                        
-                    ],
-                    'tags'          : ['food']
-                },
-
-                {
-                    'title'         : 'Second Recipe',
-                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. ',
-                    'thumbnail'     : ['/img/images/thumbs/1.jpg'],
-                    'large'         : ['/img/images/1.jpg'],
-                    'button_list'   :
-                    [
-                        { 'title':'<i class="material-icons">assignment_turned_in</i>', 'description' : 'Ingredients'},
-                        { 'title':'<i class="material-icons">timer</i>', 'description' : 'Cooking Directions'},
-                        { 'title':'<i class="material-icons">shopping_basket</i>','description' : 'Shopping List'},
-                        { 'title':'<i class="material-icons">share</i>', 'description' : 'Share With Friends'}
-                        
-                    ],
-                    'tags'          : ['food']
-                },
-
-                {
-                    'title'         : 'Third Recipe',
-                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. ',
-                    'thumbnail'     : ['/img/images/thumbs/1.jpg'],
-                    'large'         : ['/img/images/1.jpg'],
-                    'button_list'   :
-                    [
-                        { 'title':'<i class="material-icons">assignment_turned_in</i>', 'description' : 'Ingredients'},
-                        { 'title':'<i class="material-icons">timer</i>', 'description' : 'Cooking Directions'},
-                        { 'title':'<i class="material-icons">shopping_basket</i>','description' : 'Shopping List'},
-                        { 'title':'<i class="material-icons">share</i>', 'description' : 'Share With Friends'}
-                        
-                    ],
-                    'tags'          : ['food']
-                },
-
-                {
-                    'title'         : 'Fourth Recipe',
-                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. ',
-                    'thumbnail'     : ['/img/images/thumbs/1.jpg'],
-                    'large'         : ['/img/images/1.jpg'],
-                    'button_list'   :
-                    [
-                        { 'title':'<i class="material-icons">assignment_turned_in</i>', 'description' : 'Ingredients'},
-                        { 'title':'<i class="material-icons">timer</i>', 'description' : 'Cooking Directions'},
-                        { 'title':'<i class="material-icons">shopping_basket</i>','description' : 'Shopping List'},
-                        { 'title':'<i class="material-icons">share</i>', 'description' : 'Share With Friends'}
-                        
-                    ],
-                    'tags'          : ['food']
-                },
-
-                {
-                    'title'         : 'Fifth Recipe',
-                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage. ',
-                    'thumbnail'     : ['/img/images/thumbs/1.jpg'],
-                    'large'         : ['/img/images/1.jpg'],
-                    'button_list'   :
-                    [
-                        { 'title':'<i class="material-icons">assignment_turned_in</i>', 'description' : 'Ingredients'},
-                        { 'title':'<i class="material-icons">timer</i>', 'description' : 'Cooking Directions'},
-                        { 'title':'<i class="material-icons">shopping_basket</i>','description' : 'Shopping List'},
-                        { 'title':'<i class="material-icons">share</i>', 'description' : 'Share With Friends'}
-                        
-                    ],
-                    'tags'          : ['food']
-                },
-
-
-
-            ]
-        });
-    });
-</script>
 
 
     <br>
@@ -219,10 +134,6 @@
         <a href="https://github.com/jenforce/cookitup"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
         <a href="#"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
     </div>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
-<!--     <script type="text/javascript" src="/js/grid.js"></script> -->
-<!--     <script src="/js/modernizr.custom.js"></script>
-    <script src="/js/classie.js"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--     <script>
     $(function() {
