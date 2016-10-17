@@ -3,12 +3,6 @@ console.log(' in here');
 angular.module('CookItUp.search', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-    
- $routeProvider.when('/', {
-        templateUrl: '/search/search.html',
-        controller: 'searchCtrl'
-    });
-
     $routeProvider.when('/search', {
         templateUrl: '/search/search.html',
         controller: 'searchCtrl'
@@ -17,7 +11,10 @@ angular.module('CookItUp.search', ['ngRoute'])
 
 .controller('searchCtrl', function($scope, ApiSearch) {
     console.log('in search ctrl');
-    ApiSearch.getRecipes('ingredients').then(function(recipeApiData) {
+    ApiSearch.getRecipes('ingredients')
+
+
+    .then(function(recipeApiData) {
       console.log('recipeApiData', recipeApiData);
         
           $scope.recipes = recipeApiData.data.recipes.map(function(recipe) {
