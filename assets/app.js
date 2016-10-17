@@ -12,8 +12,15 @@ angular.module('CookItUp', [
    $scope.search = function(searchQuery) {
       console.log('in search button click', searchQuery);
         $location.path('search');
+
    }
    console.log('in main controller');
-}).config([function (){
-  
-}])
+}).config(['$routeProvider', function($routeProvider) {
+    
+ $routeProvider.when('/', {
+        templateUrl: '/search/search.html',
+        controller: 'searchCtrl'
+    });
+
+
+}]);
