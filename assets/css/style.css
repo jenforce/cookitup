@@ -61,13 +61,13 @@ nav.navbar.navbar-default {
 
 .modal-body {
     background-color: #ededed;
-    color:black;!important
+    color: black;
+    !important
 }
 
 #image-input {
     padding: 5px 0 5px;
 }
-
 
 .visibility {
     "visibility: hidden;"
@@ -75,7 +75,7 @@ nav.navbar.navbar-default {
 
 .jumbotron {
     background: url('/img/images/Cooking_Background.jpg') no-repeat center center fixed;
-    height: 75%;
+    height: 25%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -87,5 +87,22 @@ nav.navbar.navbar-default {
 "visibility: hidden;"
 }*/
 
+/*@media only screen and (max-device-width: 767px) {
+    .navbar-brand {
+        float: left;
+        height: 50px;
+        padding: 1px 15px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+}*/
 
-
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+    .navbar-brand {
+        float: left;
+        height: 50px;
+        padding: 1px 15px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    }
