@@ -5,6 +5,9 @@ angular.module('CookItUp.service', [])
   return {
     getRecipes: function(recipes){
       return $http.get('https://crossorigin.me/http://food2fork.com/api/search?key=781b0d28ced3c3fc106072fc1c859602&q=' + recipes);
-    }
+    },
+    getRecipeDetail: function(rId){
+      return $http.get('https://crossorigin.me/http://food2fork.com/api/get?key=781b0d28ced3c3fc106072fc1c859602&rId=' +rId);
+    }    
   }
 });

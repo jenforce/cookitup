@@ -1,14 +1,18 @@
+console.log('loading recipectrl');
 'use strict';
 
-angular.module('CookItUp', ['ngRoute'])
+angular.module('CookItUp.recipe', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider){
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'ViewCtrl'
+  $routeProvider.when('/recipe/:id', {
+    templateUrl: 'view1/recipe-card.html',
+    controller: 'RecipeCtrl'
   });
 }])
 
-.controller('ViewCtrl', function($scope,Search) {
+.controller('RecipeCtrl', function($scope, ApiSearch, $routeParams) {
+  ApiSearch.getRecipeDetail($routeParams.id).then(function(data) {
+    $scope.recipe = data.data.recipe;
+  })
   
 })

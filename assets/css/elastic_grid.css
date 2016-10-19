@@ -183,8 +183,8 @@
 }
 
 .og-details h3 {
-	font-weight: 300;
-	font-size: 36px;
+	font-weight: 400;
+	font-size: 40px;
 	/*padding: 0px 0 10px;*/
 	margin-top: 0px;
 	margin-bottom: 10px;
@@ -192,7 +192,19 @@
 
 .og-details p {
 	font-weight: 400;
-	font-size: 15px;
+	font-size: 20px;
+	line-height: 22px;
+	color: #999;
+	padding-bottom: 20px;
+}
+
+.og-details #info{
+font-size: 20px;
+
+}
+.og-details #info a{
+font-weight: 400;
+	font-size: 20px;
 	line-height: 22px;
 	color: #999;
 	padding-bottom: 20px;
@@ -227,7 +239,7 @@
 	word-wrap: normal;
 	color: #9f9f9f !important;
 	cursor: pointer !important;
-	font-size: 11px;
+	font-size: 15px;
 	font-weight: bold;
 	text-align: center;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
